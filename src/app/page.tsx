@@ -1,5 +1,6 @@
 'use client';
 
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -72,14 +73,15 @@ export default function Home() {
             {areas.map((area, i) => {
               const Icon = area.icon;
               return (
-                <div key={i} className="relative glass p-6 h-full">
-                  <div className="glass__sheen" />
-                  <div className="flex flex-col items-center">
-                    <Icon className="w-12 h-12 text-yellow-400 mb-6" />
-                    <h3 className="text-2xl font-semibold mb-4">{area.title}</h3>
-                    <p className="text-gray-200 text-center">{area.description}</p>
-                  </div>
-                </div>
+                <motion.div key={i} whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+                  <Card className="rounded-2xl shadow-md hover:shadow-xl transition p-6 h-full">
+                    <CardContent className="flex flex-col items-center">
+                      <Icon className="w-12 h-12 text-yellow-500 mb-6" />
+                      <h3 className="text-2xl font-semibold mb-4">{area.title}</h3>
+                      <p className="text-gray-600">{area.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               );
             })}
           </div>
@@ -124,26 +126,29 @@ export default function Home() {
           {/* Cards de contato */}
           <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-2xl mx-auto">
             {/* Card de E-mail */}
-            <div className="relative glass p-6 cursor-pointer">
-              <div className="glass__sheen" />
+            <Card className="rounded-2xl shadow-md hover:shadow-xl transition p-6 cursor-pointer">
               <a href="mailto:ivbsantos@outlook.com" className="flex flex-col items-center w-full h-full">
-                <Mail className="w-12 h-12 text-blue-400 mb-4" />
+                <Mail className="w-12 h-12 text-blue-600 mb-4" />
                 <h3 className="text-2xl font-semibold mb-2">E-mail</h3>
-                <span className="text-gray-200">ivbsantos@outlook.com</span>
+                <span className="text-gray-700">ivbsantos@outlook.com</span>
               </a>
-            </div>
+            </Card>
 
             {/* Card de Telefone / WhatsApp */}
-            <a href="https://wa.me/5511982227149" target="_blank" rel="noopener noreferrer" className="block">
-              <div className="relative glass p-6 cursor-pointer">
-                <div className="glass__sheen" />
-                <div className="flex flex-col items-center">
-                  <Phone className="w-12 h-12 text-green-400 mb-3" />
-                  <h3 className="text-2xl font-semibold mb-2">WhatsApp</h3>
-                  <span className="text-gray-200">+55 11 98222-7149</span>
-                </div>
-              </div>
-            </a>
+            <Card className="rounded-2xl shadow-md hover:shadow-xl transition p-6 cursor-pointer">
+              <a href="https://wa.me/5511982227149" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
+                <Phone className="w-12 h-12 text-green-600 mb-2" />
+                <h3 className="text-2xl font-semibold mb-2">Telefone / WhatsApp</h3>
+                <span className="flex items-center gap-2 text-gray-700 hover:text-green-600">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                    alt="WhatsApp"
+                    className="w-5 h-5"
+                  />
+                  +55 11 98222-7149
+                </span>
+              </a>
+            </Card>
           </div>
         </div>
       </section>
