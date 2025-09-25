@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="min-h-screen scroll-smooth bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-600 text-gray-100 font-sans">
       {/* Navigation */}
-      <nav className="bg-gray-900 px-6 py-4 flex space-x-8 items-center">
+      <nav className="fixed top-0 left-0 w-full z-50 shadow-md bg-gray-900 px-6 py-4 flex space-x-8 items-center">
         <a href="/" className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 transition">
           <HomeIcon className="w-5 h-5" />
           <span>Home</span>
@@ -27,7 +27,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center h-screen text-center px-6 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-600">
+      <section className="relative flex items-center justify-center h-screen text-center px-6 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-600 pt-20">
         <motion.div
           className="relative z-10 text-white"
           initial={{ opacity: 0, y: 40 }}
