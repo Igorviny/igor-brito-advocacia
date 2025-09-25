@@ -16,6 +16,7 @@ export default function Home() {
 
   return (
     <div className="pt-20 min-h-screen scroll-smooth bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-600 text-gray-100 font-sans">
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 shadow-md bg-gray-900 px-6 py-4 flex space-x-8 items-center">
         <Link href="/" className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 transition">
@@ -103,32 +104,23 @@ export default function Home() {
             Estamos prontos para ouvir seu caso e oferecer a melhor solução.
           </p>
 
-          <motion.form
+          {/* Formulário usando Formspree */}
+          <form
+            action="https://formspree.io/f/xldpdpwa"  // <-- substitua pelo seu endpoint Formspree
+            method="POST"
             className="grid gap-6 text-left max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
           >
-            <div>
-              <label className="block mb-2 text-gray-700 font-medium">Nome</label>
-              <Input type="text" placeholder="Digite seu nome" className="rounded-xl" />
-            </div>
-            <div>
-              <label className="block mb-2 text-gray-700 font-medium">E-mail</label>
-              <Input type="email" placeholder="Digite seu e-mail" className="rounded-xl" />
-            </div>
-            <div>
-              <label className="block mb-2 text-gray-700 font-medium">Telefone</label>
-              <Input type="tel" placeholder="(00) 00000-0000" className="rounded-xl" />
-            </div>
-            <div>
-              <label className="block mb-2 text-gray-700 font-medium">Mensagem</label>
-              <Textarea placeholder="Escreva sua mensagem" className="rounded-xl" rows={5} />
-            </div>
-            <Button type="submit" className="w-full py-6 text-lg rounded-2xl shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 transition">
+            <Input name="nome" placeholder="Digite seu nome" className="rounded-xl" required />
+            <Input name="email" type="email" placeholder="Digite seu e-mail" className="rounded-xl" required />
+            <Input name="telefone" placeholder="(00) 00000-0000" className="rounded-xl" />
+            <Textarea name="mensagem" placeholder="Escreva sua mensagem" className="rounded-xl" rows={5} required />
+            <Button
+              type="submit"
+              className="w-full py-6 text-lg rounded-2xl shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 transition"
+            >
               Enviar Mensagem
             </Button>
-          </motion.form>
+          </form>
 
           {/* Cards de contato */}
           <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-2xl mx-auto">
@@ -139,7 +131,6 @@ export default function Home() {
                 <span className="text-gray-700">ivbsantos@outlook.com</span>
               </a>
             </div>
-
             <a href="https://wa.me/5511982227149" target="_blank" rel="noopener noreferrer" className="block">
               <div className="bg-gray-50 rounded-2xl shadow-md p-6 cursor-pointer">
                 <div className="flex flex-col items-center">
