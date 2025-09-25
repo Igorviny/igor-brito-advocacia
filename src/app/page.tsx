@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { Scale, Mail, Phone, Users, FileText } from "lucide-react";
+import { Scale, Mail, Phone, Users, FileText, Home as HomeIcon } from "lucide-react";
 
 export default function Home() {
   const areas = [
@@ -13,26 +13,19 @@ export default function Home() {
     { title: "Família e Sucessões", description: "Assessoria em divórcios, guarda, pensão, inventários e planejamento sucessório.", icon: Users },
   ];
 
-  const artigos = [
-    {
-      title: "Como funciona o divórcio consensual em São Paulo",
-      resumo: "Entenda o passo a passo do divórcio amigável, prazos e custos envolvidos no processo.",
-      link: "#"
-    },
-    {
-      title: "O que fazer quando um contrato não é cumprido",
-      resumo: "Conheça os principais direitos e medidas cabíveis em caso de descumprimento contratual.",
-      link: "#"
-    },
-    {
-      title: "Danos morais: quando cabe indenização?",
-      resumo: "Saiba em quais situações a justiça entende que existe direito à reparação por danos morais.",
-      link: "#"
-    }
-  ];
-
   return (
     <div className="min-h-screen scroll-smooth bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-600 text-gray-100 font-sans">
+      {/* Navigation */}
+      <nav className="bg-gray-900 px-6 py-4 flex space-x-8 items-center">
+        <a href="/" className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 transition">
+          <HomeIcon className="w-5 h-5" />
+          <span>Home</span>
+        </a>
+        <a href="/artigos" className="text-gray-300 hover:text-yellow-400 transition">
+          Artigos
+        </a>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative flex items-center justify-center h-screen text-center px-6 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-600">
         <motion.div
@@ -99,27 +92,6 @@ export default function Home() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Artigos */}
-      <section className="py-20 bg-white text-gray-900">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-12">Artigos</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {artigos.map((artigo, i) => (
-              <div key={i} className="bg-gray-50 rounded-2xl shadow-md p-6 text-left">
-                <h3 className="text-2xl font-semibold mb-4">{artigo.title}</h3>
-                <p className="text-gray-600 mb-4">{artigo.resumo}</p>
-                <a
-                  href={artigo.link}
-                  className="text-yellow-600 font-medium hover:underline"
-                >
-                  Ler mais →
-                </a>
-              </div>
-            ))}
           </div>
         </div>
       </section>
