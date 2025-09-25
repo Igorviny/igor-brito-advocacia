@@ -28,7 +28,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center h-screen text-center px-6 overflow-hidden">
+      <section className="relative flex items-center justify-center h-[50vh] text-center px-6 overflow-hidden">
         <motion.div
           className="relative z-10 text-white"
           initial={{ opacity: 0, y: 40 }}
