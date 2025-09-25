@@ -104,7 +104,7 @@ export default function Home() {
 
           {/* Formulário funcional com Formspree */}
           <form
-            action="https://formspree.io/f/https://formspree.io/f/xldpdpwa" // <-- substitua pelo seu endpoint
+            action="/https://formspree.io/f/xldpdpwa" // <-- substitua pelo seu endpoint
             method="POST"
             className="grid gap-6 text-left max-w-2xl mx-auto"
           >
