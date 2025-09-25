@@ -1,6 +1,5 @@
 'use client';
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +11,24 @@ export default function Home() {
     { title: "Direito Contratual", description: "Elaboração e revisão de contratos para garantir segurança jurídica e minimizar riscos.", icon: FileText },
     { title: "Responsabilidade Civil", description: "Atuação em indenizações, danos morais e materiais, buscando proteção e reparação ao cliente.", icon: Scale },
     { title: "Família e Sucessões", description: "Assessoria em divórcios, guarda, pensão, inventários e planejamento sucessório.", icon: Users },
+  ];
+
+  const artigos = [
+    {
+      title: "Como funciona o divórcio consensual em São Paulo",
+      resumo: "Entenda o passo a passo do divórcio amigável, prazos e custos envolvidos no processo.",
+      link: "#"
+    },
+    {
+      title: "O que fazer quando um contrato não é cumprido",
+      resumo: "Conheça os principais direitos e medidas cabíveis em caso de descumprimento contratual.",
+      link: "#"
+    },
+    {
+      title: "Danos morais: quando cabe indenização?",
+      resumo: "Saiba em quais situações a justiça entende que existe direito à reparação por danos morais.",
+      link: "#"
+    }
   ];
 
   return (
@@ -73,17 +90,36 @@ export default function Home() {
             {areas.map((area, i) => {
               const Icon = area.icon;
               return (
-                <motion.div key={i} whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <Card className="rounded-2xl shadow-md hover:shadow-xl transition p-6 h-full">
-                    <CardContent className="flex flex-col items-center">
-                      <Icon className="w-12 h-12 text-yellow-500 mb-6" />
-                      <h3 className="text-2xl font-semibold mb-4">{area.title}</h3>
-                      <p className="text-gray-600">{area.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                <div key={i} className="bg-white rounded-2xl shadow-lg p-6 text-gray-900">
+                  <div className="flex flex-col items-center">
+                    <Icon className="w-12 h-12 text-yellow-500 mb-6" />
+                    <h3 className="text-2xl font-semibold mb-4">{area.title}</h3>
+                    <p className="text-gray-600 text-center">{area.description}</p>
+                  </div>
+                </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Artigos */}
+      <section className="py-20 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-12">Artigos</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {artigos.map((artigo, i) => (
+              <div key={i} className="bg-gray-50 rounded-2xl shadow-md p-6 text-left">
+                <h3 className="text-2xl font-semibold mb-4">{artigo.title}</h3>
+                <p className="text-gray-600 mb-4">{artigo.resumo}</p>
+                <a
+                  href={artigo.link}
+                  className="text-yellow-600 font-medium hover:underline"
+                >
+                  Ler mais →
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -125,30 +161,23 @@ export default function Home() {
 
           {/* Cards de contato */}
           <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-2xl mx-auto">
-            {/* Card de E-mail */}
-            <Card className="rounded-2xl shadow-md hover:shadow-xl transition p-6 cursor-pointer">
+            <div className="bg-gray-50 rounded-2xl shadow-md p-6 cursor-pointer">
               <a href="mailto:ivbsantos@outlook.com" className="flex flex-col items-center w-full h-full">
-                <Mail className="w-12 h-12 text-blue-600 mb-4" />
+                <Mail className="w-12 h-12 text-blue-500 mb-4" />
                 <h3 className="text-2xl font-semibold mb-2">E-mail</h3>
                 <span className="text-gray-700">ivbsantos@outlook.com</span>
               </a>
-            </Card>
+            </div>
 
-            {/* Card de Telefone / WhatsApp */}
-            <Card className="rounded-2xl shadow-md hover:shadow-xl transition p-6 cursor-pointer">
-              <a href="https://wa.me/5511982227149" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-                <Phone className="w-12 h-12 text-green-600 mb-2" />
-                <h3 className="text-2xl font-semibold mb-2">Telefone / WhatsApp</h3>
-                <span className="flex items-center gap-2 text-gray-700 hover:text-green-600">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                    alt="WhatsApp"
-                    className="w-5 h-5"
-                  />
-                  +55 11 98222-7149
-                </span>
-              </a>
-            </Card>
+            <a href="https://wa.me/5511982227149" target="_blank" rel="noopener noreferrer" className="block">
+              <div className="bg-gray-50 rounded-2xl shadow-md p-6 cursor-pointer">
+                <div className="flex flex-col items-center">
+                  <Phone className="w-12 h-12 text-green-500 mb-3" />
+                  <h3 className="text-2xl font-semibold mb-2">WhatsApp</h3>
+                  <span className="text-gray-700">+55 11 98222-7149</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
