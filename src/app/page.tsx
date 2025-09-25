@@ -104,7 +104,7 @@ export default function Home() {
 
           {/* Formulário funcional com Formspree */}
           <form
-            action="/https://formspree.io/f/xldpdpwa" // <-- substitua pelo seu endpoint
+            action="https://formspree.io/f/xldpdpwa"
             method="POST"
             className="grid gap-6 text-left max-w-2xl mx-auto"
           >
@@ -112,7 +112,10 @@ export default function Home() {
             <input type="email" name="email" placeholder="Digite seu e-mail" className="rounded-xl p-3 border border-gray-300" required />
             <input type="tel" name="telefone" placeholder="(00) 00000-0000" className="rounded-xl p-3 border border-gray-300" />
             <textarea name="mensagem" placeholder="Escreva sua mensagem" className="rounded-xl p-3 border border-gray-300" rows={5} required></textarea>
-            <button type="submit" className="w-full py-6 text-lg rounded-2xl shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 transition">
+            <button
+              type="submit"
+              className="w-full py-6 text-lg rounded-2xl shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 transition"
+            >
               Enviar Mensagem
             </button>
           </form>
