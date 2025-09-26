@@ -17,11 +17,17 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 shadow-md bg-gray-900 px-6 py-4 flex space-x-8 items-center">
-        <Link href="/" className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 transition">
+        <Link
+          href="/"
+          className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 hover:shadow-md px-3 py-1 rounded-lg transform hover:scale-105 transition duration-300"
+        >
           <HomeIcon className="w-5 h-5" />
           <span>Home</span>
         </Link>
-        <Link href="/artigos" className="text-gray-300 hover:text-yellow-400 transition">
+        <Link
+          href="/artigos"
+          className="text-gray-300 hover:text-yellow-400 hover:shadow-md px-3 py-1 rounded-lg transform hover:scale-105 transition duration-300"
+        >
           Artigos
         </Link>
       </nav>
@@ -39,7 +45,11 @@ export default function Home() {
             Excelência em Direito Civil. Defesa estratégica, soluções modernas e foco em resultados.
           </p>
           <Link href="#contato">
-            <Button className="text-lg px-8 py-6 rounded-2xl shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 transition">
+            <Button
+              className="text-lg px-8 py-6 rounded-2xl shadow-md bg-gradient-to-r from-yellow-500 to-yellow-400 
+                         hover:from-yellow-400 hover:to-yellow-500 hover:shadow-xl 
+                         transform hover:scale-105 transition duration-300"
+            >
               Entre em Contato
             </Button>
           </Link>
@@ -52,7 +62,7 @@ export default function Home() {
           <motion.img
             src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
             alt="Advogado"
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl shadow-lg transform hover:scale-105 hover:shadow-xl transition duration-300"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -81,7 +91,11 @@ export default function Home() {
             {areas.map((area, i) => {
               const Icon = area.icon;
               return (
-                <div key={i} className="bg-white rounded-2xl shadow-lg p-6 text-gray-900">
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl shadow-md p-6 text-gray-900 
+                             hover:shadow-xl transform hover:scale-105 transition duration-300"
+                >
                   <div className="flex flex-col items-center">
                     <Icon className="w-12 h-12 text-yellow-500 mb-6" />
                     <h3 className="text-2xl font-semibold mb-4">{area.title}</h3>
@@ -108,13 +122,38 @@ export default function Home() {
             method="POST"
             className="grid gap-6 text-left max-w-2xl mx-auto"
           >
-            <input type="text" name="nome" placeholder="Digite seu nome" className="rounded-xl p-3 border border-gray-300" required />
-            <input type="email" name="email" placeholder="Digite seu e-mail" className="rounded-xl p-3 border border-gray-300" required />
-            <input type="tel" name="telefone" placeholder="(00) 00000-0000" className="rounded-xl p-3 border border-gray-300" />
-            <textarea name="mensagem" placeholder="Escreva sua mensagem" className="rounded-xl p-3 border border-gray-300" rows={5} required></textarea>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Digite seu nome"
+              className="rounded-xl p-3 border border-gray-300 hover:shadow-md transform hover:scale-105 transition duration-300"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              className="rounded-xl p-3 border border-gray-300 hover:shadow-md transform hover:scale-105 transition duration-300"
+              required
+            />
+            <input
+              type="tel"
+              name="telefone"
+              placeholder="(00) 00000-0000"
+              className="rounded-xl p-3 border border-gray-300 hover:shadow-md transform hover:scale-105 transition duration-300"
+            />
+            <textarea
+              name="mensagem"
+              placeholder="Escreva sua mensagem"
+              className="rounded-xl p-3 border border-gray-300 hover:shadow-md transform hover:scale-105 transition duration-300"
+              rows={5}
+              required
+            ></textarea>
             <button
               type="submit"
-              className="w-full py-6 text-lg rounded-2xl shadow-lg bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-500 transition"
+              className="w-full py-6 text-lg rounded-2xl shadow-md bg-gradient-to-r from-yellow-500 to-yellow-400 
+                         hover:from-yellow-400 hover:to-yellow-500 hover:shadow-xl 
+                         transform hover:scale-105 transition duration-300"
             >
               Enviar Mensagem
             </button>
@@ -122,15 +161,26 @@ export default function Home() {
 
           {/* Cards de contato */}
           <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-2xl mx-auto">
-            <div className="bg-gray-50 rounded-2xl shadow-md p-6 cursor-pointer">
+            <div
+              className="bg-gray-50 rounded-2xl shadow-md p-6 cursor-pointer 
+                         hover:shadow-xl transform hover:scale-105 transition duration-300"
+            >
               <a href="mailto:ivbsantos@outlook.com" className="flex flex-col items-center w-full h-full">
                 <Mail className="w-12 h-12 text-blue-500 mb-4" />
                 <h3 className="text-2xl font-semibold mb-2">E-mail</h3>
                 <span className="text-gray-700">ivbsantos@outlook.com</span>
               </a>
             </div>
-            <a href="https://wa.me/5511982227149" target="_blank" rel="noopener noreferrer" className="block">
-              <div className="bg-gray-50 rounded-2xl shadow-md p-6 cursor-pointer">
+            <a
+              href="https://wa.me/5511982227149"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <div
+                className="bg-gray-50 rounded-2xl shadow-md p-6 cursor-pointer 
+                           hover:shadow-xl transform hover:scale-105 transition duration-300"
+              >
                 <div className="flex flex-col items-center">
                   <Phone className="w-12 h-12 text-green-500 mb-3" />
                   <h3 className="text-2xl font-semibold mb-2">WhatsApp</h3>
